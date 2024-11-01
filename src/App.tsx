@@ -2,7 +2,7 @@
 import { Connector, useAccount, useChains, useConnect, useDisconnect, useSwitchChain } from 'wagmi';
 import './App.css'
 import { useCallback, } from "react";
-import { toHex } from 'viem';
+import { hexToBigInt, toHex } from 'viem';
 import eruda from "eruda"
 
 eruda.init()
@@ -48,14 +48,19 @@ export const App = () => {
       chainId: id
     })
   }
+
+  const cache = localStorage.getItem('.MMSDK_cached_chainId')
   return (
     <div className="App">
       {(
         <div>
           <>
-            {chainId && `Connected chain: ${chainId}/${toHex(chainId)}`}
-            <p></p>
-            {address && `Connected account: ${address}`}
+            <p>{cache && `cache chain: ${Number(hexToBigInt(cache as `0x${string}`))}/${cache}`}</p>
+            <p>{chainId && `Connected chain: ${chainId}/${toHex(chainId)}`}</p>
+            <p style={{
+              fontSize: 12
+            }}> {address && `Connected account: ${address}`}</p>
+
           </>
         </div>
       )}
@@ -69,9 +74,22 @@ export const App = () => {
       {chainId && <div>
         <h3>   switch chain</h3>
         {
-          chains.map(chain => <button style={{ margin: "0 5px" }} onClick={() => switchChain(chain.id)}>
-            {chain.name}
-          </button>)
+          chains.map(chain => <div style={{
+            backgroundColor: "#aaaa",
+            borderRadius: 8,
+            padding: 4,
+            margin: 4
+          }}>
+            <p>
+              {chain.name}
+            </p>
+            <p>
+              id: {chain.id}/ {toHex(chain.id)}
+            </p>
+            <button style={{ margin: "0 5px" }} onClick={() => switchChain(chain.id)}>
+              select
+            </button>
+          </div>)
         }
       </div>}
     </div>
