@@ -1,7 +1,7 @@
 
-import { Connector, useAccount, useChainId, useChains, useConnect, useDisconnect, useSwitchChain } from 'wagmi';
+import { Connector, useAccount, useChains, useConnect, useDisconnect, useSwitchChain } from 'wagmi';
 import './App.css'
-import { useCallback, useState } from "react";
+import { useCallback, } from "react";
 import { toHex } from 'viem';
 
 export const App = () => {
