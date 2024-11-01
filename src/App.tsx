@@ -3,7 +3,9 @@ import { Connector, useAccount, useChains, useConnect, useDisconnect, useSwitchC
 import './App.css'
 import { useCallback, } from "react";
 import { toHex } from 'viem';
+import eruda from "eruda"
 
+eruda.init()
 export const App = () => {
   const { address, isConnecting, chainId } = useAccount()
   const { connectors, connectAsync, } = useConnect()

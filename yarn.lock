@@ -2297,6 +2297,11 @@ errno@^0.1.1, errno@~0.1.1:
   dependencies:
     prr "~1.0.1"
 
+eruda@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npmmirror.com/eruda/-/eruda-3.4.0.tgz#52e0fa4b123cfef7d4eb12dbcb9c00cbca5936fb"
+  integrity sha512-MSPJUwdKX8gJuWXzlKN0YcZUm8+XAMtntW+tmnvEpb1hUVQRxMiB/lxrqkuOBQ/SQJRXpIP1E0cADsRZMDjpXg==
+
 es-define-property@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/es-define-property/-/es-define-property-1.0.0.tgz#c7faefbdff8b2696cf5f46921edfb77cc4ba3845"
